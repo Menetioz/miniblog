@@ -8,7 +8,7 @@ class db {
         $this->bdd = new PDO('mysql:host=localhost;dbname=xxxxx;charset=utf8','xxxxx','xxxxx');
         $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
-    //fonction qui recupere tout les article pour les afficher sur index.php
+    //fonction qui recupere tout les articles pour les afficher sur index.php
     function getArticlesForIndex() {
         $req = $this->bdd->prepare('SELECT * FROM articles ORDER BY id DESC');
         $req->execute();
@@ -16,7 +16,7 @@ class db {
         return $data;
         $req->closeCursor();     
     }
-    //fonction qui recupere un article dans la ndd
+    //fonction qui recupere un article dans la bdd
     function getArticle($id) {
         $req = $this->bdd->prepare('SELECT * FROM articles WHERE id = ?');
         $req->execute(array($id));
