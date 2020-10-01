@@ -14,7 +14,7 @@ $articles = $db->getArticlesForIndex();
             <h3><?= $article->title ?></h3>
             <img class="img-fluid shadow-sm" src="<?= $article->img ?>" alt="">
             <time><?= $article->date ?></time>
-            <p><?= substr($article->content, 0, 50);?></p>
+            <p><?= substr($article->content, 0, 60);?>...</p>
             <br><br>
             <a href="article.php?id=<?= $article->id; ?>">Lire la suite</a>
         </div>
